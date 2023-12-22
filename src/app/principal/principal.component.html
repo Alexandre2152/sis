@@ -1,0 +1,30 @@
+<div class="container-sm mt-5">
+
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Pesquisar..." [(ngModel)]="filtroDeBusca" aria-label="Pesquisar" aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" type="button" (click)="buscar()">Buscar</button>
+  </div>
+
+  <div class="table-responsive-sm">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">EMAIL</th>
+          <th scope="col">FIRST NAME</th>
+          <th scope="col">LAST NAME</th>
+          <th scope="col">AVATAR</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let item of dados">
+          <td class="align-middle text-center">{{ item.id }}</td>
+          <td class="align-middle text-center">{{ item.email }}</td>
+          <td class="align-middle text-center">{{ item.first_name }}</td>
+          <td class="align-middle text-center">{{ item.last_name }}</td>
+          <td class="align-middle text-center"><img [src]="item.avatar" alt="Teste" width="100" height="100"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
